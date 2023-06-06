@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ADM_0008PageDef"
+                Package="S01.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AdminRightsMasterVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="AdminRightsMasterVO1Iterator"/>
+    <iterator Binds="AdminRightsDetailVO3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="AdminRightsDetailVO3Iterator"/>
+    <searchRegion Binds="AdminRightsDetailVO3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AdminRightsDetailVO3Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AdminRightsMasterVO1Iterator" id="RightsId">
+      <AttrNames>
+        <Item Value="RightsId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdminRightsMasterVO1Iterator" StaticList="false" Uses="LOV_UserId" id="UserId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AdminRightsMasterVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminRightsMasterVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="AdminRightsMasterVO1Iterator" StaticList="false" Uses="LOV_RightMasterActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <action IterBinding="AdminRightsMasterVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AdminRightsMasterVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="AdminRightsMasterVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AdminRightsMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="AdminRightsDetailVO3Iterator" id="AdminRightsDetailVO3">
+      <nodeDefinition DefName="S01.model.admin.vo.AdminRightsDetailVO" Name="AdminRightsDetailVO30">
+        <AttrNames>
+          <Item Value="FormId"/>
+          <Item Value="RInsert"/>
+          <Item Value="RUpdate"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+          <Item Value="RPosting"/>
+          <Item Value="RFrom"/>
+          <Item Value="RTo"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AdminRightsMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="AdminRightsMasterVO1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="AdminRightsDetailVO3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="AdminRightsDetailVO3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

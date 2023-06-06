@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ADM_0001PageDef"
+                Package="S01.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="doLogin_return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.doLogin.result}"/>
+      <variable Type="java.lang.String" Name="doLogin_pUser_name" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="doLogin_pUser_password" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="doLogin" RequiresUpdateModel="true" Action="invokeMethod" MethodName="doLogin"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="data.AppModuleDataControl.AdminUsersVO1"
+                  ReturnName="data.AppModuleDataControl.methodResults.doLogin_AppModuleDataControl_AdminUsersVO1_doLogin_result">
+      <NamedData NDName="pUser_name" NDType="java.lang.String" NDValue="${bindings.doLogin_pUser_name}"/>
+      <NamedData NDName="pUser_password" NDType="java.lang.String" NDValue="${bindings.doLogin_pUser_password}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="pUser_name">
+      <AttrNames>
+        <Item Value="doLogin_pUser_name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="pUser_password">
+      <AttrNames>
+        <Item Value="doLogin_pUser_password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="doLogin_return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

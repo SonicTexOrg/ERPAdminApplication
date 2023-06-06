@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ADM_0006PageDef"
+                Package="S01.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AdminUserInfoVO1" RangeSize="25" DataControl="AppModuleDataControl" id="AdminUserInfoVO1Iterator"/>
+    <searchRegion Binds="AdminUserInfoVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AdminUserInfoVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AdminUserInfoVO1Iterator" id="UserId">
+      <AttrNames>
+        <Item Value="UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdminUserInfoVO1Iterator" StaticList="false" Uses="LOV_LocationId" id="LocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="AdminUserInfoVO1Iterator" StaticList="false" Uses="LOV_DepartId" id="DepartId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AdminUserInfoVO1Iterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminUserInfoVO1Iterator" id="Password">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminUserInfoVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminUserInfoVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminUserInfoVO1Iterator" id="Active">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AdminUserInfoVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AdminUserInfoVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="AdminUserInfoVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AdminUserInfoVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="AdminUserInfoVO1Iterator" id="AdminUserInfoVO1">
+      <nodeDefinition DefName="S01.model.admin.vo.AdminUserInfoVO" Name="AdminUserInfoVO10">
+        <AttrNames>
+          <Item Value="UserId"/>
+          <Item Value="LocationId"/>
+          <Item Value="DepartId"/>
+          <Item Value="UserName"/>
+          <Item Value="Password"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AdminUserInfoVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="AdminUserInfoVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

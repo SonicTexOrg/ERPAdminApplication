@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ADM_0007PageDef"
+                Package="S01.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AdminFormDetailVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="AdminFormDetailVO1Iterator"/>
+    <searchRegion Binds="AdminFormDetailVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AdminFormDetailVO1Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="AdminFormDetailVO1Iterator" StaticList="false" Uses="LOVFormType" id="FormType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="AdminFormDetailVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="AdminFormDetailVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="AdminFormDetailVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AdminFormDetailVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <button IterBinding="AdminFormDetailVO1Iterator" StaticList="false" Uses="LOV_Active" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="AdminFormDetailVO1Iterator" id="FormId">
+      <AttrNames>
+        <Item Value="FormId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="AdminFormDetailVO1Iterator" StaticList="false" Uses="LOV_ModuleId" id="ModuleId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="AdminFormDetailVO1Iterator" id="FormName">
+      <AttrNames>
+        <Item Value="FormName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminFormDetailVO1Iterator" id="FormDescription">
+      <AttrNames>
+        <Item Value="FormDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminFormDetailVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminFormDetailVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AdminFormDetailVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AdminFormDetailVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="AdminFormDetailVO1Iterator" id="AdminFormDetailVO1">
+      <nodeDefinition DefName="S01.model.admin.vo.AdminFormDetailVO" Name="AdminFormDetailVO10">
+        <AttrNames>
+          <Item Value="FormId"/>
+          <Item Value="ModuleId"/>
+          <Item Value="FormName"/>
+          <Item Value="FormDescription"/>
+          <Item Value="FormType"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

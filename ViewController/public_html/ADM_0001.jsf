@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="ADM_0001.jsf" id="d1" binding="#{backingBeanScope.backing_Login.d1}">
+    <af:messages id="m1" binding="#{backingBeanScope.backing_Login.m1}"/>
+    <af:form id="f1" binding="#{backingBeanScope.backing_Login.f1}">
+      <af:panelHeader text="Sonic Textile Industry (Pvt) Ltd." id="ph1" binding="#{backingBeanScope.backing_Login.ph1}"
+                      inlineStyle="font-size:xx-large; color:Blue;">
+        <f:facet name="context"/>
+        <f:facet name="menuBar"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+        <af:panelBox text="Login Page" id="pb1" background="medium" inlineStyle="background-color:GrayText;"
+                     binding="#{backingBeanScope.backing_Login.pb1}">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Login.pfl1}">
+            <af:inputText value="#{bindings.pUser_name.inputValue}" label="#{bindings.pUser_name.hints.label}"
+                          required="#{bindings.pUser_name.hints.mandatory}"
+                          columns="#{bindings.pUser_name.hints.displayWidth}"
+                          maximumLength="#{bindings.pUser_name.hints.precision}"
+                          shortDesc="#{bindings.pUser_name.hints.tooltip}" id="it1" simple="true" placeholder="UserName"
+                          binding="#{backingBeanScope.backing_Login.it1}">
+              <f:validator binding="#{bindings.pUser_name.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.pUser_password.inputValue}" label="#{bindings.pUser_password.hints.label}"
+                          required="#{bindings.pUser_password.hints.mandatory}"
+                          columns="#{bindings.pUser_password.hints.displayWidth}"
+                          maximumLength="#{bindings.pUser_password.hints.precision}"
+                          shortDesc="#{bindings.pUser_password.hints.tooltip}" id="it2" placeholder="Password"
+                          simple="true" binding="#{backingBeanScope.backing_Login.it2}" secret="true">
+              <f:validator binding="#{bindings.pUser_password.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.return.inputValue}" label="#{bindings.return.hints.label}"
+                          required="#{bindings.return.hints.mandatory}" columns="#{bindings.return.hints.displayWidth}"
+                          maximumLength="#{bindings.return.hints.precision}"
+                          shortDesc="#{bindings.return.hints.tooltip}" id="it3" partialTriggers="b1" simple="true"
+                          binding="#{backingBeanScope.backing_Login.it3}" visible="false">
+              <f:validator binding="#{bindings.return.validator}"/>
+            </af:inputText>
+            <af:button text="Login" disabled="#{!bindings.doLogin.enabled}" id="b1"
+                       binding="#{backingBeanScope.backing_Login.b1}"
+                       action="#{backingBeanScope.backing_Login.doLoginApp}"/>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:panelHeader>
+    </af:form>
+  </af:document>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Login-->
+</f:view>

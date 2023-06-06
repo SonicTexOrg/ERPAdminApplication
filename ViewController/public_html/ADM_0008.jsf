@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ADM_0008.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelHeader text="Admin Rights Master Setup" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelSplitter id="ps1" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelBox text="Admin Rights Setup" id="pb1">
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t2">
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="New"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b6"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b8"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b9">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete.enabled}" id="b7"/>
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.RightsId.inputValue}"
+                                              label="#{bindings.RightsId.hints.label}"
+                                              required="#{bindings.RightsId.hints.mandatory}"
+                                              columns="#{bindings.RightsId.hints.displayWidth}"
+                                              maximumLength="#{bindings.RightsId.hints.precision}"
+                                              shortDesc="#{bindings.RightsId.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.RightsId.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RightsId.format}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.UserId.inputValue}"
+                                                    label="#{bindings.UserId.label}"
+                                                    required="#{bindings.UserId.hints.mandatory}"
+                                                    shortDesc="#{bindings.UserId.hints.tooltip}" id="soc1">
+                                    <f:selectItems value="#{bindings.UserId.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.UserId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputText value="#{bindings.EnteredBy.inputValue}"
+                                              label="#{bindings.EnteredBy.hints.label}"
+                                              required="#{bindings.EnteredBy.hints.mandatory}"
+                                              columns="#{bindings.EnteredBy.hints.displayWidth}"
+                                              maximumLength="#{bindings.EnteredBy.hints.precision}"
+                                              shortDesc="#{bindings.EnteredBy.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.EnteredBy.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EnteredBy.format}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.EnteredOn.inputValue}"
+                                              label="#{bindings.EnteredOn.hints.label}"
+                                              required="#{bindings.EnteredOn.hints.mandatory}"
+                                              columns="#{bindings.EnteredOn.hints.displayWidth}"
+                                              shortDesc="#{bindings.EnteredOn.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.EnteredOn.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.EnteredOn.format}"/>
+                                </af:inputDate>
+                                <af:selectBooleanCheckbox value="#{bindings.Active.inputValue}"
+                                                          label="#{bindings.Active.label}"
+                                                          shortDesc="#{bindings.Active.hints.tooltip}" id="sbc1"/>
+                                <f:facet name="footer"/>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t3">
+                                    <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+                                               disabled="#{!bindings.CreateInsert1.enabled}" id="b10"/>
+                                    <af:spacer width="10" height="10" id="s1"/>
+                                    <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete1.enabled}" id="b11"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.AdminRightsDetailVO3.collectionModel}" var="row"
+                                      rows="#{bindings.AdminRightsDetailVO3.rangeSize}"
+                                      emptyText="#{bindings.AdminRightsDetailVO3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.AdminRightsDetailVO3.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.AdminRightsDetailVO3.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.AdminRightsDetailVO3.rangeSize}"
+                                      filterModel="#{bindings.AdminRightsDetailVO3Query.queryDescriptor}"
+                                      queryListener="#{bindings.AdminRightsDetailVO3Query.processQuery}"
+                                      filterVisible="true" varStatus="vs" id="t1" partialTriggers="::b10 ::b11">
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.FormId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.FormId.label}" id="c3">
+                                    <af:selectOneChoice value="#{row.bindings.FormId.inputValue}"
+                                                        label="#{row.bindings.FormId.label}"
+                                                        required="#{bindings.AdminRightsDetailVO3.hints.FormId.mandatory}"
+                                                        shortDesc="#{bindings.AdminRightsDetailVO3.hints.FormId.tooltip}"
+                                                        id="soc2">
+                                        <f:selectItems value="#{row.bindings.FormId.items}" id="si2"/>
+                                        <f:validator binding="#{row.bindings.FormId.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RInsert.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RInsert.label}" id="c4">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.RInsert.inputValue}"
+                                                              label="#{row.bindings.RInsert.label}"
+                                                              shortDesc="#{bindings.AdminRightsDetailVO3.hints.RInsert.tooltip}"
+                                                              id="sbc2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RUpdate.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RUpdate.label}" id="c5">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.RUpdate.inputValue}"
+                                                              label="#{row.bindings.RUpdate.label}"
+                                                              shortDesc="#{bindings.AdminRightsDetailVO3.hints.RUpdate.tooltip}"
+                                                              id="sbc3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RDelete.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RDelete.label}" id="c6">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.RDelete.inputValue}"
+                                                              label="#{row.bindings.RDelete.label}"
+                                                              shortDesc="#{bindings.AdminRightsDetailVO3.hints.RDelete.tooltip}"
+                                                              id="sbc4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RPrint.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RPrint.label}" id="c7">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.RPrint.inputValue}"
+                                                              label="#{row.bindings.RPrint.label}"
+                                                              shortDesc="#{bindings.AdminRightsDetailVO3.hints.RPrint.tooltip}"
+                                                              id="sbc5"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RPosting.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RPosting.label}" id="c8">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.RPosting.inputValue}"
+                                                              label="#{row.bindings.RPosting.label}"
+                                                              shortDesc="#{bindings.AdminRightsDetailVO3.hints.RPosting.tooltip}"
+                                                              id="sbc6"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RFrom.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RFrom.label}" id="c9">
+                                    <af:inputDate value="#{row.bindings.RFrom.inputValue}"
+                                                  label="#{bindings.AdminRightsDetailVO3.hints.RFrom.label}"
+                                                  required="#{bindings.AdminRightsDetailVO3.hints.RFrom.mandatory}"
+                                                  columns="#{bindings.AdminRightsDetailVO3.hints.RFrom.displayWidth}"
+                                                  shortDesc="#{bindings.AdminRightsDetailVO3.hints.RFrom.tooltip}"
+                                                  id="id3">
+                                        <f:validator binding="#{row.bindings.RFrom.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.AdminRightsDetailVO3.hints.RFrom.format}"/>
+                                    </af:inputDate>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.AdminRightsDetailVO3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RFrom.value}"
+                                                      id="id6">
+                                            <af:convertDateTime pattern="#{bindings.AdminRightsDetailVO3.hints.RFrom.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.RTo.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.RTo.label}" id="c10">
+                                    <af:inputDate value="#{row.bindings.RTo.inputValue}"
+                                                  label="#{bindings.AdminRightsDetailVO3.hints.RTo.label}"
+                                                  required="#{bindings.AdminRightsDetailVO3.hints.RTo.mandatory}"
+                                                  columns="#{bindings.AdminRightsDetailVO3.hints.RTo.displayWidth}"
+                                                  shortDesc="#{bindings.AdminRightsDetailVO3.hints.RTo.tooltip}"
+                                                  id="id5">
+                                        <f:validator binding="#{row.bindings.RTo.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.AdminRightsDetailVO3.hints.RTo.format}"/>
+                                    </af:inputDate>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.AdminRightsDetailVO3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.RTo.value}"
+                                                      id="id4">
+                                            <af:convertDateTime pattern="#{bindings.AdminRightsDetailVO3.hints.RTo.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.label}" id="c11">
+                                    <af:inputText value="#{row.bindings.EnteredBy.inputValue}"
+                                                  label="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.label}"
+                                                  required="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.mandatory}"
+                                                  columns="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.displayWidth}"
+                                                  maximumLength="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.precision}"
+                                                  shortDesc="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.tooltip}"
+                                                  id="it5">
+                                        <f:validator binding="#{row.bindings.EnteredBy.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.AdminRightsDetailVO3.hints.EnteredBy.format}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.label}" id="c12">
+                                    <af:inputDate value="#{row.bindings.EnteredOn.inputValue}"
+                                                  label="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.label}"
+                                                  required="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.mandatory}"
+                                                  columns="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.displayWidth}"
+                                                  shortDesc="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.tooltip}"
+                                                  id="id7">
+                                        <f:validator binding="#{row.bindings.EnteredOn.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.format}"/>
+                                    </af:inputDate>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.AdminRightsDetailVO3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredOn.value}"
+                                                      id="id2">
+                                            <af:convertDateTime pattern="#{bindings.AdminRightsDetailVO3.hints.EnteredOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.AdminRightsDetailVO3.hints.Active.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.AdminRightsDetailVO3.hints.Active.label}" id="c13">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.Active.inputValue}"
+                                                              label="#{row.bindings.Active.label}"
+                                                              shortDesc="#{bindings.AdminRightsDetailVO3.hints.Active.tooltip}"
+                                                              id="sbc7"/>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:panelHeader>
+        </af:form>
+    </af:document>
+</f:view>

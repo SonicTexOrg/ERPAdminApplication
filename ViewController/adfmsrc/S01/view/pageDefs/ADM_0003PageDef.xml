@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ADM_0003PageDef"
+                Package="S01.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AdminLocationVO1" RangeSize="25" DataControl="AppModuleDataControl" id="AdminLocationVO1Iterator"/>
+    <searchRegion Binds="AdminLocationVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AdminLocationVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AdminLocationVO1Iterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminLocationVO1Iterator" id="LocationName">
+      <AttrNames>
+        <Item Value="LocationName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminLocationVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminLocationVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminLocationVO1Iterator" id="Active">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AdminLocationVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AdminLocationVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="AdminLocationVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AdminLocationVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="AdminLocationVO1Iterator" id="AdminLocationVO1">
+      <nodeDefinition DefName="S01.model.admin.vo.AdminLocationVO" Name="AdminLocationVO10">
+        <AttrNames>
+          <Item Value="LocationId"/>
+          <Item Value="LocationName"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AdminLocationVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="AdminLocationVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

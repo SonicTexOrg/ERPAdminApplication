@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ADM_0005PageDef"
+                Package="S01.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AdminModulesVO1" RangeSize="25" DataControl="AppModuleDataControl" id="AdminModulesVO1Iterator"/>
+    <searchRegion Binds="AdminModulesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AdminModulesVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AdminModulesVO1Iterator" id="ModuleId">
+      <AttrNames>
+        <Item Value="ModuleId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminModulesVO1Iterator" id="ModuleCode">
+      <AttrNames>
+        <Item Value="ModuleCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminModulesVO1Iterator" id="ModuleName">
+      <AttrNames>
+        <Item Value="ModuleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminModulesVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminModulesVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdminModulesVO1Iterator" id="Active">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AdminModulesVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AdminModulesVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="AdminModulesVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AdminModulesVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="AdminModulesVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="AdminModulesVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="AdminModulesVO1Iterator" id="AdminModulesVO1">
+      <nodeDefinition DefName="S01.model.admin.vo.AdminModulesVO" Name="AdminModulesVO10">
+        <AttrNames>
+          <Item Value="ModuleId"/>
+          <Item Value="ModuleCode"/>
+          <Item Value="ModuleName"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
