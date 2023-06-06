@@ -87,14 +87,30 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="ADMIN_USERS"/>
+    TableName="ADMIN_USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminUsersEO.LastEditedBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LastEditedOn"
     ColumnName="LAST_EDITED_ON"
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="ADMIN_USERS"/>
+    TableName="ADMIN_USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminUsersEO.LastEditedOn_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Active"
     IsNotNull="true"
