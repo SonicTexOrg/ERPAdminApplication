@@ -73,7 +73,14 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="ADMIN_USERS"/>
+    TableName="ADMIN_USERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminUsersEO.EnteredBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EnteredOn"
     ColumnName="ENTERED_ON"
