@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BpMasterEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="BP_MASTER"
+  AliasName="BpMasterEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="BpId"
+    IsNotNull="true"
+    ColumnName="BP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BP_MASTER"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="BpfId"
+    ColumnName="BPF_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BP_MASTER"/>
+  <Attribute
+    Name="BpNo"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="BP_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OldId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="OLD_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AcId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="AC_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContactNo"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="CONTACT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RefNo"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="REF_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Brand"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="BRAND"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmailNo"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="EMAIL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ntn"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="NTN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address1"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName="ADDRESS1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address2"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName="ADDRESS2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BP_MASTER"/>
+  <Attribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="BP_MASTER"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BP_MASTER"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="BP_MASTER"/>
+  <AccessorAttribute
+    Name="BpFrefixEO"
+    Association="S01.model.admin.Asso.FkBpMasterAssoc"
+    AssociationEnd="S01.model.admin.Asso.FkBpMasterAssoc.BpFrefixEO"
+    AssociationOtherEnd="S01.model.admin.Asso.FkBpMasterAssoc.BpMasterEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkBpMaster"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_BP_MASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.BpMasterEO.BpId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkBpMaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_BP_FREFIX"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_BP_MASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.BpMasterEO.BpfId"/>
+    </AttrArray>
+  </Key>
+</Entity>

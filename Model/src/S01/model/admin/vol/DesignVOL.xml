@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DesignVOL"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="S01.model.admin.Asso.FkDesignAssoc">
+  <ViewLinkDefEnd
+    Name="ColorsVO"
+    Cardinality="1"
+    Source="true"
+    Owner="S01.model.admin.vo.ColorsVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ColorsVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.vo.ColorsVO.ColorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DesignVO"
+    Cardinality="-1"
+    Owner="S01.model.admin.vo.DesignVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DesignVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.vo.DesignVO.ColorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

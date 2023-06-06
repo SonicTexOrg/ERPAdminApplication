@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ItemCategoryEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ITEM_CATEGORY"
+  AliasName="ItemCategoryEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ItemCatId"
+    IsNotNull="true"
+    ColumnName="ITEM_CAT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_CATEGORY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ItemCatNo"
+    IsNotNull="true"
+    Precision="6"
+    ColumnName="ITEM_CAT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_CATEGORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemCatDesc"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="ITEM_CAT_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_CATEGORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_CATEGORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_CATEGORY"/>
+  <Attribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ITEM_CATEGORY"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_CATEGORY"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ITEM_CATEGORY"/>
+  <AccessorAttribute
+    Name="ItemMasterEO"
+    Association="S01.model.admin.Asso.Fk1ItemMasterAssoc"
+    AssociationEnd="S01.model.admin.Asso.Fk1ItemMasterAssoc.ItemMasterEO"
+    AssociationOtherEnd="S01.model.admin.Asso.Fk1ItemMasterAssoc.ItemCategoryEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkItemCategory"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ITEM_CATEGORY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.ItemCategoryEO.ItemCatId"/>
+    </AttrArray>
+  </Key>
+</Entity>

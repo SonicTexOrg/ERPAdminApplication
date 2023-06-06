@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TermsEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TERMS"
+  AliasName="TermsEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="TermsId"
+    IsNotNull="true"
+    ColumnName="TERMS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TERMS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="TermsDescription"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="TERMS_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TERMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TermsDays"
+    IsNotNull="true"
+    ColumnName="TERMS_DAYS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TERMS"/>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TERMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TERMS"/>
+  <Attribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="TERMS"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TERMS"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="TERMS"/>
+  <Key
+    Name="PkTerms"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_TERMS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.TermsEO.TermsId"/>
+    </AttrArray>
+  </Key>
+</Entity>

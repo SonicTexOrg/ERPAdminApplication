@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AdminUsersEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ADMIN_USERS"
+  AliasName="AdminUsersEO"
+  BindingStyle="OracleName"
+  RowClass="S01.model.admin.eo.AdminUsersEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="UserId"
+    IsNotNull="true"
+    ColumnName="USER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_USERS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="UserName"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminUsersEO.UserName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserPassword"
+    Precision="50"
+    ColumnName="USER_PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_USERS"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminUsersEO.UserPassword_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_USERS"/>
+  <Attribute
+    Name="EnteredOn"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ADMIN_USERS"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_USERS"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ADMIN_USERS"/>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="AdminUsersUserPasswordCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ADMIN_USERS_USER_PASSWORD_CHEC"/>
+      <Attr Name="_checkCondition" Value='"USER_PASSWORD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.AdminUsersEO.UserPassword"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PkAdminUsers"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ADMIN_USERS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.AdminUsersEO.UserId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnqAdminUsers">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UNQ_ADMIN_USERS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.AdminUsersEO.UserName"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="S01.model.admin.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

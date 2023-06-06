@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FabTypeEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="FAB_TYPE"
+  AliasName="FabTypeEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FabTypeId"
+    IsNotNull="true"
+    ColumnName="FAB_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_TYPE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FabTypeNo"
+    IsNotNull="true"
+    Precision="6"
+    ColumnName="FAB_TYPE_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FAB_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FabTypeName"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="FAB_TYPE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FAB_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_TYPE"/>
+  <Attribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="FAB_TYPE"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_TYPE"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="FAB_TYPE"/>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FAB_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="FabMasterEO"
+    Association="S01.model.admin.Asso.FkFabMasterAssoc"
+    AssociationEnd="S01.model.admin.Asso.FkFabMasterAssoc.FabMasterEO"
+    AssociationOtherEnd="S01.model.admin.Asso.FkFabMasterAssoc.FabTypeEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkFabType"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FAB_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.FabTypeEO.FabTypeId"/>
+    </AttrArray>
+  </Key>
+</Entity>
