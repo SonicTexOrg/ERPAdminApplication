@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AdminRightsDetailVO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="Admin_Form_DetailLOV1"
+    ViewObjectName="S01.model.admin.vo.Admin_Form_DetailLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AdminFormDetailVO1"
+    ViewObjectName="S01.model.admin.vo.AdminFormDetailVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RightDetailInsertYesNoLOV"
+    ViewObjectName="S01.model.admin.vo.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RightDetailUpdateYesNoLOV"
+    ViewObjectName="S01.model.admin.vo.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RightDetailDeleteYesNoLOV"
+    ViewObjectName="S01.model.admin.vo.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RightDetailPrintYesNoLOV"
+    ViewObjectName="S01.model.admin.vo.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RightDetailPostingYesNoLOV"
+    ViewObjectName="S01.model.admin.vo.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RightDetailActiveYesNoLOV"
+    ViewObjectName="S01.model.admin.vo.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FormIdAdminForm"
+    ListVOName="AdminFormDetailVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FormId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FormId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FormDescription"/>
+      <Item Value="FormId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RInsert"
+    ListVOName="RightDetailInsertYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RInsert"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RUpdate"
+    ListVOName="RightDetailUpdateYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RUpdate"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RDelete"
+    ListVOName="RightDetailDeleteYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RDelete"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RPrint"
+    ListVOName="RightDetailPrintYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RPrint"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RPosting"
+    ListVOName="RightDetailPostingYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RPosting"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Active"
+    ListVOName="RightDetailActiveYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Active"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="pActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="AdminRightsDetailEO"
+    Entity="S01.model.admin.eo.AdminRightsDetailEO"/>
+  <ViewAttribute
+    Name="DetailSno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DetailSno"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="DETAIL_SNO">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RightsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RightsId"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="RIGHTS_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FormId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FormId"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="FORM_ID"
+    LOVName="LOV_FormIdAdminForm">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RInsert"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RInsert"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_INSERT"
+    LOVName="LOV_RInsert">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RUpdate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RUpdate"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_UPDATE"
+    LOVName="LOV_RUpdate">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RDelete"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RDelete"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_DELETE"
+    LOVName="LOV_RDelete">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RPrint"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RPrint"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_PRINT"
+    LOVName="LOV_RPrint">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RPosting"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RPosting"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_POSTING"
+    LOVName="LOV_RPosting">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RFrom"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RFrom"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_FROM">
+    <Properties>
+      <SchemaBasedProperties/>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RTo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RTo"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="R_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredBy"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="ENTERED_BY"/>
+  <ViewAttribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredOn"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="ENTERED_ON">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastEditedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedBy"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="LAST_EDITED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastEditedOn"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedOn"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="LAST_EDITED_ON">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Active"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Active"
+    EntityUsage="AdminRightsDetailEO"
+    AliasName="ACTIVE"
+    LOVName="LOV_Active">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

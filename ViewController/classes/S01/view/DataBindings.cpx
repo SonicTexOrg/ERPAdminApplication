@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="S01.view" ClientType="Generic">
+  <pageMap>
+    <page path="/ADM_0001.jsf" usageId="S01_view_ADM_0001PageDef"/>
+    <page path="/ADM_0002.jsf" usageId="S01_view_ADM_0002PageDef"/>
+    <page path="/ADM_0004.jsf" usageId="S01_view_ADM_0004PageDef"/>
+    <page path="/P_0005.jsf" usageId="S01_view_P_0005PageDef"/>
+    <page path="/ADM_0003.jsf" usageId="S01_view_ADM_0003PageDef"/>
+    <page path="/ADM_0005.jsf" usageId="S01_view_ADM_0005PageDef"/>
+    <page path="/ADM_0006.jsf" usageId="S01_view_ADM_0006PageDef"/>
+    <page path="/ADM_0007.jsf" usageId="S01_view_ADM_0007PageDef"/>
+    <page path="/ADM_0008.jsf" usageId="S01_view_ADM_0008PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="S01_view_ADM_0001PageDef" path="S01.view.pageDefs.ADM_0001PageDef"/>
+    <page id="S01_view_ADM_0002PageDef" path="S01.view.pageDefs.ADM_0002PageDef"/>
+    <page id="S01_view_ADM_0004PageDef" path="S01.view.pageDefs.ADM_0004PageDef"/>
+    <page id="S01_view_P_0005PageDef" path="S01.view.pageDefs.P_0005PageDef"/>
+    <page id="S01_view_ADM_0003PageDef" path="S01.view.pageDefs.ADM_0003PageDef"/>
+    <page id="S01_view_ADM_0005PageDef" path="S01.view.pageDefs.ADM_0005PageDef"/>
+    <page id="S01_view_ADM_0006PageDef" path="S01.view.pageDefs.ADM_0006PageDef"/>
+    <page id="S01_view_ADM_0007PageDef" path="S01.view.pageDefs.ADM_0007PageDef"/>
+    <page id="S01_view_ADM_0008PageDef" path="S01.view.pageDefs.ADM_0008PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="S01.model.admin.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

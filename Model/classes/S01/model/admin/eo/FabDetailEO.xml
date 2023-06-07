@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FabDetailEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="FAB_DETAIL"
+  AliasName="FabDetailEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FabDetId"
+    IsNotNull="true"
+    ColumnName="FAB_DET_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FabId"
+    IsNotNull="true"
+    ColumnName="FAB_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <Attribute
+    Name="ItemId"
+    IsNotNull="true"
+    ColumnName="ITEM_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <Attribute
+    Name="Percentage"
+    IsNotNull="true"
+    Precision="6"
+    Scale="2"
+    ColumnName="PERCENTAGE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <Attribute
+    Name="Remarks"
+    Precision="200"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FAB_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <Attribute
+    Name="EnteredOn"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="NUMBER"
+    TableName="FAB_DETAIL"/>
+  <AccessorAttribute
+    Name="FabMasterEO"
+    Association="S01.model.admin.Asso.Fk1FabDetailAssoc"
+    AssociationEnd="S01.model.admin.Asso.Fk1FabDetailAssoc.FabMasterEO"
+    AssociationOtherEnd="S01.model.admin.Asso.Fk1FabDetailAssoc.FabDetailEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ItemMasterEO"
+    Association="S01.model.admin.Asso.Fk2FabDetailAssoc"
+    AssociationEnd="S01.model.admin.Asso.Fk2FabDetailAssoc.ItemMasterEO"
+    AssociationOtherEnd="S01.model.admin.Asso.Fk2FabDetailAssoc.FabDetailEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkFabDetail"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FAB_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.FabDetailEO.FabDetId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Fk1FabDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FAB_MASTER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK1_FAB_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.FabDetailEO.FabId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Fk2FabDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ITEM_MASTER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK2_FAB_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.FabDetailEO.ItemId"/>
+    </AttrArray>
+  </Key>
+</Entity>

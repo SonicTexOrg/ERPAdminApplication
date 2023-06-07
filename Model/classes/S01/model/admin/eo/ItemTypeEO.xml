@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ItemTypeEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ITEM_TYPE"
+  AliasName="ItemTypeEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ItemTypeId"
+    IsNotNull="true"
+    ColumnName="ITEM_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_TYPE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ItemTypePrefix"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="3"
+    ColumnName="ITEM_TYPE_PREFIX"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemTypeDesc"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="ITEM_TYPE_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_TYPE"/>
+  <Attribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ITEM_TYPE"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_TYPE"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ITEM_TYPE"/>
+  <AccessorAttribute
+    Name="ItemMasterEO"
+    Association="S01.model.admin.Asso.Fk2ItemMasterAssoc"
+    AssociationEnd="S01.model.admin.Asso.Fk2ItemMasterAssoc.ItemMasterEO"
+    AssociationOtherEnd="S01.model.admin.Asso.Fk2ItemMasterAssoc.ItemTypeEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkItemType"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ITEM_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.ItemTypeEO.ItemTypeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnqItemType">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UNQ_ITEM_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.ItemTypeEO.ItemTypePrefix"/>
+    </AttrArray>
+  </Key>
+</Entity>

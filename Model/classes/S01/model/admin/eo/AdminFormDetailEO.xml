@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AdminFormDetailEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ADMIN_FORM_DETAIL"
+  AliasName="AdminFormDetailEO"
+  BindingStyle="OracleName"
+  RowClass="S01.model.admin.eo.AdminFormDetailEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="FormId"
+    IsNotNull="true"
+    ColumnName="FORM_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_FORM_DETAIL"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminFormDetailEO.FormId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ModuleId"
+    Precision="5"
+    Scale="0"
+    ColumnName="MODULE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_FORM_DETAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminFormDetailEO.ModuleId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="FormName"
+    IsUnique="true"
+    Precision="30"
+    ColumnName="FORM_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_FORM_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminFormDetailEO.FormName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="FormDescription"
+    Precision="100"
+    ColumnName="FORM_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_FORM_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminFormDetailEO.FormDescription_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="FormType"
+    Precision="30"
+    ColumnName="FORM_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_FORM_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminFormDetailEO.FormType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_FORM_DETAIL"/>
+  <Attribute
+    Name="EnteredOn"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ADMIN_FORM_DETAIL"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADMIN_FORM_DETAIL"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ADMIN_FORM_DETAIL"/>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADMIN_FORM_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="S01.model.admin.eo.AdminFormDetailEO.Active_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="AdminRightsDetailEO"
+    Association="S01.model.admin.Asso.Fk2AdminRightsDetailAssoc"
+    AssociationEnd="S01.model.admin.Asso.Fk2AdminRightsDetailAssoc.AdminRightsDetailEO"
+    AssociationOtherEnd="S01.model.admin.Asso.Fk2AdminRightsDetailAssoc.AdminFormDetailEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkAdminFormDetail"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ADMIN_FORM_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.AdminFormDetailEO.FormId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnqAdminFormDetail">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UNQ_ADMIN_FORM_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.AdminFormDetailEO.FormName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_AdminFormDetailEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ADMIN_MODULES"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ADMIN_FORM_DETAIL_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="S01.model.admin.eo.AdminFormDetailEO.ModuleId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="S01.model.admin.ModelBundle"/>
+  </ResourceBundle>
+</Entity>
