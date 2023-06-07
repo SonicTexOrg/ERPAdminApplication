@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DesignEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DESIGN"
+  AliasName="DesignEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DesignId"
+    IsNotNull="true"
+    ColumnName="DESIGN_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DESIGN"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.DesignEO.DesignId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DesignName"
+    IsUnique="true"
+    Precision="30"
+    ColumnName="DESIGN_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DESIGN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.DesignEO.DesignName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ColorId"
+    ColumnName="COLOR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DESIGN">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.DesignEO.ColorId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DesignDetail"
+    Precision="50"
+    ColumnName="DESIGN_DETAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DESIGN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.DesignEO.DesignDetail_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DESIGN"/>
+  <Attribute
+    Name="EnteredOn"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DESIGN"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DESIGN"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DESIGN"/>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DESIGN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ColorsEO"
+    Association="STP.model.asso.FkDesignAssoc"
+    AssociationEnd="STP.model.asso.FkDesignAssoc.ColorsEO"
+    AssociationOtherEnd="STP.model.asso.FkDesignAssoc.DesignEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkDesign"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_DESIGN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.DesignEO.DesignId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnqDesign">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UNQ_DESIGN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.DesignEO.DesignName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDesign">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COLORS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_DESIGN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.DesignEO.ColorId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="STP.SetupBundle"/>
+  </ResourceBundle>
+</Entity>
